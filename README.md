@@ -60,14 +60,14 @@ controller  →  service  →  repository  →  database
 - Validação de pneu já vinculado
 ---
 ## Endpoints principais
-###Veículos
+### Veículos
 Método | Endpoint | Descrição
 --- | --- | ---
 GET | /api/v1/veiculo | Lista veículos paginados
 GET | /api/v1/veiculo/{id} | Busca veículo por ID
 POST | /api/v1/veiculo | Cria novo veículo
 ---
-###Pneus
+### Pneus
 Método | Endpoint | Descrição
 --- | --- | ---
 GET | /api/v1/pneu | Lista pneus paginados
@@ -75,12 +75,13 @@ POST | /api/v1/pneu/cadastrar | Cadastra novo pneu
 PUT | /api/v1/pneu/vincular | Vincula pneu a veículo
 PUT | /api/v1/pneu/desvincular | Desvincula pneu
 ---
-##Documentação da API
+## Documentação da API
 Após subir a aplicação:
-````bash
+```bash
 http://localhost:8089/api/v1/swagger-ui.html
+```
 ---
-##Perfis de execução
+## Perfis de execução
 Perfil | Banco de dados | Uso
 --- | --- | ---
 dev | H2 em memória | Desenvolvimento local
@@ -95,6 +96,7 @@ prod | PostgreSQL | Produção
 ```bash
 git clone https://github.com/jphsc/teste-projeto.git
 cd teste-projeto
+```
 
 ### 2. Rodar o projeto com Maven
 O projeto deve ser executado conforme o perfil desejado, sendo possível 3 perfils: dev, prod e test.
@@ -103,36 +105,42 @@ Obs: Os testes e2e só podem ser executados no profile test
 - dev
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
 
 - prod
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
+```
 
 - test
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=test
+```
 
 ### Rodando o projeto com Docker
 ***Subir aplicação e banco***
 ```bash
 docker-compose up --build
+```
 
 A aplicação ficará disponível em:
 ```bash
 http://localhost:8089/api/v1
+```
 
-##Testes
-##Rodar todos os testes
+## Testes
+### Rodar todos os testes
 ```bash
 mvn test
+```
 
-###Tipos de testes
+### Tipos de testes
 Tipo | Descrição
 --- | ---
 Unitários | Testes isolados de service e utilitários
 E2E | Testes de fluxo completo via HTTP
 
-##Tratamento de erros
+## Tratamento de erros
 A API possui
 - Exception global
 - Padronização de respostas de erro
@@ -144,13 +152,13 @@ Exemplo de resposta:
   "codigoErro": 200,
   "descricaoErro": "Pneu não encontrado"
 }
+```
 
-
-##Autor
-###Rafael Costa
+## Autor
+### Rafael Costa
 Desenvolvedor Java
 
-##Licença
+## Licença
 Projeto desenvolvido para fins de avaliação técnica.
 Uso livre para estudos e demonstrações.
 
