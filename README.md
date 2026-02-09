@@ -43,22 +43,23 @@ controller  →  service  →  repository  →  database
 - Model: Entidades JPA
 - DTO: Objetos de transporte
 - Mapper: Conversão entidade ↔ DTO
+  
 ---
+
 ## Funcionalidades
 **Veículos**
 - Cadastro de veículos
 - Listagem paginada
-- Consulta por ID
+- Consulta veículo por ID
 
 **Pneus**
 - Cadastro de pneus
 - Listagem paginada
-- Relacionamento
 - Vincular pneu a veículo
 - Desvincular pneu de veículo
-- Validação de posição ocupada
-- Validação de pneu já vinculado
+  
 ---
+
 ## Endpoints principais
 ### Veículos
 Método | Endpoint | Descrição
@@ -66,7 +67,7 @@ Método | Endpoint | Descrição
 GET | `/api/v1/veiculo` | Lista veículos paginados
 GET | `/api/v1/veiculo/{id}` | Busca veículo por ID
 POST | `/api/v1/veiculo` | Cria novo veículo
----
+
 ### Pneus
 Método | Endpoint | Descrição
 --- | --- | ---
@@ -74,23 +75,28 @@ GET | `/api/v1/pneu` | Lista pneus paginados
 POST | `/api/v1/pneu/cadastrar` | Cadastra novo pneu
 PUT | `/api/v1/pneu/vincular` | Vincula pneu a veículo
 PUT | `/api/v1/pneu/desvincular` | Desvincula pneu
+
 ---
+
 ## Documentação da API
 Após subir a aplicação:
 ```bash
 http://localhost:8089/api/v1/swagger-ui.html
 ```
+
 ---
+
 ## Perfis de execução
 Perfil | Banco de dados | Uso
 --- | --- | ---
 dev | H2 em memória | Desenvolvimento local
 test | H2 em memória | Testes automatizados
 prod | PostgreSQL | Produção
+
 --- 
 
 ## Como rodar o projeto localmente
-### 1. Clonar o repositório
+### Clonar o repositório
 
 ```bash
 git clone https://github.com/jphsc/teste-projeto.git
@@ -138,7 +144,9 @@ Tipo | Descrição
 --- | ---
 Unitários | Testes isolados de service e utilitários
 E2E | Testes de fluxo completo via HTTP
+
 ---
+
 ## Tratamento de erros
 A API possui
 - Exception global
@@ -152,11 +160,16 @@ Exemplo de resposta:
   "descricaoErro": "Pneu não encontrado"
 }
 ```
+
 ---
+
 ## Autor
 ### Rafael Costa
+
 Desenvolvedor Java
+
 ---
+
 ## Licença
 Projeto desenvolvido para fins de avaliação técnica.
 Uso livre para estudos e demonstrações.
