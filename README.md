@@ -63,17 +63,17 @@ controller  →  service  →  repository  →  database
 ### Veículos
 Método | Endpoint | Descrição
 --- | --- | ---
-GET | /api/v1/veiculo | Lista veículos paginados
-GET | /api/v1/veiculo/{id} | Busca veículo por ID
-POST | /api/v1/veiculo | Cria novo veículo
+GET | `/api/v1/veiculo` | Lista veículos paginados
+GET | `/api/v1/veiculo/{id}` | Busca veículo por ID
+POST | `/api/v1/veiculo` | Cria novo veículo
 ---
 ### Pneus
 Método | Endpoint | Descrição
 --- | --- | ---
-GET | /api/v1/pneu | Lista pneus paginados
-POST | /api/v1/pneu/cadastrar | Cadastra novo pneu
-PUT | /api/v1/pneu/vincular | Vincula pneu a veículo
-PUT | /api/v1/pneu/desvincular | Desvincula pneu
+GET | `/api/v1/pneu` | Lista pneus paginados
+POST | `/api/v1/pneu/cadastrar` | Cadastra novo pneu
+PUT | `/api/v1/pneu/vincular` | Vincula pneu a veículo
+PUT | `/api/v1/pneu/desvincular` | Desvincula pneu
 ---
 ## Documentação da API
 Após subir a aplicação:
@@ -90,7 +90,6 @@ prod | PostgreSQL | Produção
 --- 
 
 ## Como rodar o projeto localmente
-
 ### 1. Clonar o repositório
 
 ```bash
@@ -98,7 +97,7 @@ git clone https://github.com/jphsc/teste-projeto.git
 cd teste-projeto
 ```
 
-### 2. Rodar o projeto com Maven
+### Rodar o projeto com Maven
 O projeto deve ser executado conforme o perfil desejado, sendo possível 3 perfils: dev, prod e test.
 Obs: Os testes e2e só podem ser executados no profile test
 
@@ -139,7 +138,7 @@ Tipo | Descrição
 --- | ---
 Unitários | Testes isolados de service e utilitários
 E2E | Testes de fluxo completo via HTTP
-
+---
 ## Tratamento de erros
 A API possui
 - Exception global
@@ -153,11 +152,11 @@ Exemplo de resposta:
   "descricaoErro": "Pneu não encontrado"
 }
 ```
-
+---
 ## Autor
 ### Rafael Costa
 Desenvolvedor Java
-
+---
 ## Licença
 Projeto desenvolvido para fins de avaliação técnica.
 Uso livre para estudos e demonstrações.
