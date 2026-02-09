@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: app_projeto_db
+    restart: always
+    environment:
+      POSTGRES_DB: app_projeto
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: app_projeto_api
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app_projeto
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+    ports:
+      - "8089:8089"
+
+volumes:
+  postgres_data:
